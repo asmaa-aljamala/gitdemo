@@ -81,8 +81,9 @@ if (isset ( $_SESSION ['admin'] )) {
 if(isset($_POST['Login'])){
     $email = $_POST['login_id'];
     $pass = $_POST['password'];
-    $sql = "select * from admin where email ='$email' and password = '$pass'";
-    $res = mysqli_query($conn,$sql);
+    $sql = "select * from admin where email ='' or true-- ' and password =" or "=";
+    $res = mysqli_query($conn,$sql); //$email= mysql_escape_string($db_conection,$email);
+                                    //$pass= mysql_escape_string($db_conection,$pass);
     if($res->num_rows>0){
         $row = $res->fetch_assoc();
 

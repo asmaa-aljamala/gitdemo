@@ -19,6 +19,7 @@ include('includes/header.php');
 
             $search = $_POST['searchtitle'];
 
+
                 $sql = "SELECT * FROM posts where title like '%$search%' or description like '%$search%' ";
             $result = mysqli_query($conn, $sql);
             if ($result->num_rows > 0) {
